@@ -2200,7 +2200,7 @@ static struct symbol *evaluate_sizeof(struct expression *expr)
 
 	if (size == 1 && is_bool_type(type)) {
 		if (Wsizeof_bool)
-			warning(expr->pos, "expression using sizeof bool");
+			warning(expr->pos, "expression using sizeof(bool)");
 		size = bits_in_char;
 	}
 

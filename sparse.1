@@ -346,9 +346,10 @@ Sparse does not issue these warnings by default.
 .
 .TP
 .B \-Wsizeof-bool
-Warn when checking the sizeof a _Bool.
+Warn when applying \fBsizeof\fR to a _Bool type.
 
-C99 does not specify the sizeof a _Bool.  gcc uses 1.
+C99 does not specify the \fBsizeof(_Bool)\fR. By default, GCC assigns _Bool a
+size of \fI1\fR.
 
 Sparse does not issue these warnings by default.
 .
