@@ -155,6 +155,7 @@ extern int Wptr_subtraction_blows;
 extern int Wreturn_void;
 extern int Wshadow;
 extern int Wsizeof_bool;
+extern int Wsizeof_void;
 extern int Wtautological_compare;
 extern int Wtransparent_union;
 extern int Wtypesign;

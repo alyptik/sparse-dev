@@ -2193,7 +2193,8 @@ static struct symbol *evaluate_sizeof(struct expression *expr)
 	size = type->bit_size;
 
 	if (size < 0 && is_void_type(type)) {
-		warning(expr->pos, "expression using sizeof(void)");
+		if (Wsizeof_void)
+			warning(expr->pos, "expression using sizeof(void)");
 		size = bits_in_char;
 	}
 

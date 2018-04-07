@@ -334,6 +334,24 @@ C99 does not specify the sizeof a _Bool. GCC uses \fI1\fR.
 Sparse does not issue these warnings by default.
 .
 .TP
+.B \-Wsizeof-void
+Warn when checking the sizeof a void.
+
+C99 does not allow the sizeof operator to be applied to incomplete types
+such as void. GCC allows \fBsizeof(void)\fR as an extension and uses \fI1\fR.
+
+Although non-standard, \fBsizeof(void)\fR is often useful when the intent
+is to operate on an expression without evaluating it, e.g. in the following
+integer constant expression predicate:
+
+.nf
+#define __is_constexpr(x) \\
+	(sizeof(int) == sizeof(*(8 ? ((void *)((long)(x) * 0l)) : (int *)8)))
+.fi
+
+Sparse does not issue these warnings by default.
+.
+.TP
 .B \-Wtransparent\-union
 Warn about any declaration using the GCC extension
 \fB__attribute__((transparent_union))\fR.
